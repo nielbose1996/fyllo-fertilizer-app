@@ -46,6 +46,7 @@ function Bigchart({
     "Chandigarh",
     "Chattishgarh",
     "Dadra & Nagar Haveli",
+    "Daman & Diu",
     "Delhi",
     "Goa",
     "Gujarat",
@@ -55,6 +56,7 @@ function Bigchart({
     "Jharkhand",
     "Karnataka",
     "Kerala",
+    "Lakshadweep",
     "Madhya Pradesh",
     "Maharastra",
     "Manipur",
@@ -65,15 +67,15 @@ function Bigchart({
     "Pondicherry",
     "Punjab",
     "Rajasthan",
+    "Sikkim",
     "Tamil Nadu",
     "Tripura",
     "Telangana",
     "Uttar Pradesh",
     "Uttaranchal",
     "West Bengal",
-    "Daman & Diu",
-    "Lakshadweep",
-    "Sikkim",
+    
+    
   ]
 
   const [statevalue, setStatevalue] = useState(states[0])

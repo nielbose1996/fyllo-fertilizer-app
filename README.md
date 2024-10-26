@@ -38,7 +38,7 @@
 
 ## About The Project
 
-The project is to create a dashboard for fyllo, displaying the table, which contains the list of fertilizer and their details like availability, requirements etc. And the analytics which is shown in graph so the user can easily know about the insights.Finally this project contains some dummy placeholders to make it look good eg: Navbar.
+The project is to create a dashboard for fyllo, displaying the table, which contains the list of fertilizer and their details like availability, requirements etc. And the analytics which is shown in graph so the user can easily know about the insights.Finally this project contains some dummy placeholders to make it look good like Topbar and Sidebar.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -73,7 +73,7 @@ To run this project, You’ll need to have
 
 1. Clone the repo
    ```sh
-   git clone https://ankitsingh_16@bitbucket.org/ankitsingh_16/fertilizer.git
+   git clone https://github.com/nielbose1996/fyllo-fertilizer-app.git
    ```
 2. Install packages
    ```sh

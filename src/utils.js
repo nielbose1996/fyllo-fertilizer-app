@@ -20,16 +20,10 @@ export function getData(data, parent, child) {
     }
     return statistics
   }
-  // result looks like this
-  // {
-  //   'Andaman & Nicobar': { DAP: 5, MAP: 5, MOP: 5, NPK: 5, TSP: 5, UREA: 5, SSP: 5 },
-  //   'Andhra Pradesh': { DAP: 5, MAP: 5, MOP: 5, NPK: 5, TSP: 5, UREA: 5, SSP: 5 },
-  //   'Arunachal Pradesh': { DAP: 5, MAP: 5, MOP: 5, NPK: 5, TSP: 5, UREA: 5, SSP: 5 },
-  // }
+
 
   let states = {}
-  // let parent = "state"
-  // let child = "product"
+ 
   for (let obj of data) {
     if (!states.hasOwnProperty(obj[parent])) {
       states[obj[parent]] = {}
@@ -38,7 +32,7 @@ export function getData(data, parent, child) {
       states = findRepeated(obj[parent], obj[child], states)
     }
   }
-  // data to be exported
+
   let finaldata = extractStatistics(states, child)
 
   return finaldata
@@ -52,24 +46,26 @@ export function capitalizeWords(string) {
 
 export function getPieData(data, valueData) {
   const chartData = data.reduce((carry, item) => {
-    const { product, [valueData]: req } = item
+    const { product, [valueData]: req } = item;
 
     if (!(product in carry)) {
-      carry[product] = 0
+      carry[product] = 0;
     }
 
-    carry[product] += parseFloat(req)
+    carry[product] += parseFloat(req);
 
-    return carry
-  }, {})
+    return carry;
+  }, {});
 
-  const finalData = [...Object.entries(chartData)]
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 5)
+  
+  const isAvailability = valueData.includes("availability");
+  const sortedData = [...Object.entries(chartData)]
+    .sort((a, b) => isAvailability ? a[1] - b[1] : b[1] - a[1]) 
+    .slice(0, 5) 
     .map((entry) => ({
       name: entry[0],
       value: entry[1],
-    }))
+    }));
 
-  return finalData
+  return sortedData;
 }

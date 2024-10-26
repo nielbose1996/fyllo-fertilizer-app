@@ -1,6 +1,6 @@
 import React from "react"
 import "./Topbar.css"
-import { NotificationsNone,Settings,Language } from "@mui/icons-material"
+import { Settings} from "@mui/icons-material"
 
 export default function Topbar() {
   return (
@@ -10,14 +10,7 @@ export default function Topbar() {
           <span className="Logo">Fyllo</span>
         </div>
         <div className="topRight">
-          <div className="topbarIconContainer">
-            <NotificationsNone />
-            <span className="topIconBag">2</span>
-          </div>
-          <div className="topbarIconContainer">
-            <Language />
-            <span className="topIconBag">2</span>
-          </div>
+
           <div className="topbarIconContainer">
             <Settings />
           </div>

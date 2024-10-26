@@ -66,7 +66,7 @@ const columns = [
 function ProductList() {
   return (
     <div className="productList">
-      <div>ProductList</div>
+      <h3 className="productHeader">ProductList</h3>
 
       <div className="productListTable">
         <div className="ag-theme-alpine" style={{ width: "100%" }}>

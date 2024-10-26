@@ -2,6 +2,9 @@
 
   flex: 4;
 }
+.productHeader{
+  margin-left: 50px;
+}
 
 .productListTable {
   display: flex;

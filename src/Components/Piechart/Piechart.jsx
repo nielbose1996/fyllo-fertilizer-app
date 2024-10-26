@@ -26,10 +26,22 @@ const renderCustomizedLabel = ({
       textAnchor={x > cx ? "start" : "end"}
       dominantBaseline="central"
     >
-      {`${(percent * 100).toFixed(0)}%`}
+      {`${(percent * 100).toFixed(0)}%` }
     </text>
   )
 }
+
+const renderCustomTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    const { name, value } = payload[0];
+    return (
+      <div className="custom-tooltip">
+        <p>{`${name}: ${value.toFixed(2)} mt`}</p>
+      </div>
+    );
+  }
+  return null;
+};
 
 function Piechart({ data, title, dataKey }) {
   let chartData = getPieData(data, dataKey)
@@ -50,7 +62,7 @@ function Piechart({ data, title, dataKey }) {
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
-        <Tooltip />
+        <Tooltip content={renderCustomTooltip} />
       </PieChart>
     </div>
   )
